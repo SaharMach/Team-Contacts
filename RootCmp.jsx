@@ -12,11 +12,13 @@ import { Home } from './pages/Home.jsx'
 // import { UserProfile } from './pages/UserProfile.jsx'
 
 export function App() {
+    //asdasdasd
     return (
         <Provider store={store}>
             <Router>
                 <div>
                     {/* <AppHeader /> */}
+                    
                     <main>
                         <Routes>
                             <Route path="/" element={<Home />} />
