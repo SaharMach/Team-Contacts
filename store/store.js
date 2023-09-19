@@ -12,18 +12,18 @@ const { createStore, compose } = Redux
 // export const ADD_CAR_TO_CART = 'ADD_CAR_TO_CART'
 // export const CLEAR_CART = 'CLEAR_CART'
 
-export const SET_USER = 'SET_USER'
-export const SET_USER_BALANCE = 'SET_USER_BALANCE'
-export const SET_USER_TODO = 'SET_USER_TODO'
-export const SET_FILTER = 'SET_FILTER'
-export const SET_TODOS = 'SET_TODOS'
-export const REMOVE_TODO = 'REMOVE_TODO'
-export const SET_FILTER_SELECT = 'SET_FILTER_SELECT'
-export const ADD_ACTIVITY = 'ADD_ACTIVITY'
-export const SET_USER_PREF = 'SET_USER_PREF'
-export const SET_USER_FULLNAME = 'SET_USER_FULLNAME'
-export const ADD_TODO = 'ADD_TODO'
-export const UPDATE_TODO = 'UPDATE_TODO'
+// export const SET_USER = 'SET_USER'
+// export const SET_USER_BALANCE = 'SET_USER_BALANCE'
+// export const SET_USER_TODO = 'SET_USER_TODO'
+// export const SET_FILTER = 'SET_FILTER'
+// export const SET_TODOS = 'SET_TODOS'
+// export const REMOVE_TODO = 'REMOVE_TODO'
+// export const SET_FILTER_SELECT = 'SET_FILTER_SELECT'
+// export const ADD_ACTIVITY = 'ADD_ACTIVITY'
+// export const SET_USER_PREF = 'SET_USER_PREF'
+// export const SET_USER_FULLNAME = 'SET_USER_FULLNAME'
+// export const ADD_TODO = 'ADD_TODO'
+// export const UPDATE_TODO = 'UPDATE_TODO'
 
 
 const initialState = {
@@ -46,26 +46,26 @@ function appReducer(state = initialState, action) {
             user = { ...state.loggedinUser, todos: action.todos }
             return { ...state, loggedinUser: user }
         case SET_USER_PREF:
-            user = {...state.loggedinUser, prefs: action.prefs}
-            return {...state, loggedinUser: user}
+            user = { ...state.loggedinUser, prefs: action.prefs }
+            return { ...state, loggedinUser: user }
         case SET_USER_FULLNAME:
-            user = {...state.loggedinUser, fullname: action.fullname}
-            return {...state, loggedinUser: user}
+            user = { ...state.loggedinUser, fullname: action.fullname }
+            return { ...state, loggedinUser: user }
         case SET_FILTER:
-                return {...state,filterBy: { txt: action.filter.txt, sortBy: action.filter.sortBy}}
+            return { ...state, filterBy: { txt: action.filter.txt, sortBy: action.filter.sortBy } }
         case SET_TODOS:
             return { ...state, todos: action.todos }
         case UPDATE_TODO:
             todos = state.todos.map(todo => todo._id === action.todo._id ? action.todo : todo)
             return { ...state, todos }
         case ADD_TODO:
-             todos = [...state.todos, action.savedTodo]
-             return { ...state, todos }
+            todos = [...state.todos, action.savedTodo]
+            return { ...state, todos }
         case REMOVE_TODO:
             todos = state.todos.filter(todo => todo._id !== action.todoId)
             return { ...state, todos }
         case ADD_ACTIVITY:
-            return {...state, activities: action.activity}
+            return { ...state, activities: action.activity }
         default:
             return state
     }
