@@ -3,7 +3,7 @@
 const { useState, useEffect } = React
 const { useSelector, useDispatch } = ReactRedux
 
-import { todoService } from '../services/todo.service.js'
+import { todoService } from '../services/add-contact.service.js'
 import { showSuccessMsg, showErrorMsg } from '../services/event-bus.service.js'
 import { SET_FILTER } from '../store/store.js'
 import { userService } from '../services/user.service.local.js'
