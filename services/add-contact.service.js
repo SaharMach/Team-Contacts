@@ -7,14 +7,13 @@ import { func } from 'prop-types'
 
 const STORAGE_KEY = 'contactsDB'
 
-export const todoService = {
+export const addContactService = {
     query,
     getById,
     save,
     remove,
     getDefaultFilter,
     getEmptyContact,
-    getTodosProgress
 }
 //jncfnfjenr
 let contacts = [
