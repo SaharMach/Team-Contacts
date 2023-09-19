@@ -22,9 +22,9 @@ export function App() {
                     <main>
                         <Routes>
                             <Route path="/" element={<Home />} />
+                            <Route path="/user/todo" element={<TodoIndex />} />
                             {/* <Route path="/about" element={<AboutUs />} />
                             <Route path="/admin" element={<Admin />}/>
-                            <Route path="/user/todo" element={<TodoIndex />} />
                             <Route path="/todo/edit/:todoId" element={<TodoEdit />} />
                             <Route path="user/profile" element={<UserProfile />}/> */}
                         </Routes>
