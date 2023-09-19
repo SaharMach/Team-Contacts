@@ -7,7 +7,7 @@ import { func } from 'prop-types'
 
 const STORAGE_KEY = 'contactsDB'
 
-export const addContactService = {
+export const contactService = {
     query,
     getById,
     save,
@@ -55,6 +55,7 @@ function remove(contactId) {
 }
 
 function save(contact) {
+    console.log('contact:', contact)
     if (contact._id) {
         return storageService.put(STORAGE_KEY, contact)
     } else {
@@ -62,7 +63,7 @@ function save(contact) {
     }
 }
 
-function getEmptyContact(firstName, lastName, email, phone) {
+function getEmptyContact(firstName = 'Yossi', lastName ='EWIJRW', email = 'werwrwe@gmail.com', phone) {
     return {
         desc: utilService.makeLorem(5),
         firstName,
