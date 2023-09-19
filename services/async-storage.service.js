@@ -6,13 +6,14 @@ export const storageService = {
     remove,
 }
 
+console.log('hey')
 function query(entityType, delay = 500) {
     var entities = JSON.parse(localStorage.getItem(entityType)) || []
     return new Promise(resolve => setTimeout(() => resolve(entities), delay))
 }
 
 function get(entityType, entityId) {
-   
+
     return query(entityType).then(entities => {
         const entity = entities.find(entity => entity._id === entityId)
         if (!entity) throw new Error(`Get failed, cannot find entity with id: ${entityId} in: ${entityType}`)
@@ -22,7 +23,7 @@ function get(entityType, entityId) {
 
 function post(entityType, newEntity) {
     console.log('entityType:', entityType, newEntity)
-    newEntity = {...newEntity}
+    newEntity = { ...newEntity }
     newEntity._id = _makeId()
     return query(entityType).then(entities => {
         entities.push(newEntity)
