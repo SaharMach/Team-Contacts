@@ -1,32 +1,31 @@
 
-import {storageService} from './async-storage.service.js'
-import {utilService} from './util.service.js'
+import { storageService } from './async-storage.service.js'
+import { utilService } from './util.service.js'
 import { userService } from './user.service.js'
 import { func } from 'prop-types'
 
 
 const STORAGE_KEY = 'contactsDB'
 
-export const todoService = {
+export const contactService = {
     query,
     getById,
     save,
     remove,
     getDefaultFilter,
     getEmptyContact,
-    getTodosProgress
 }
-
+//jncfnfjenr
 let contacts = [
-    {_id:utilService.makeId(), firstName:'Sahar', lastName:'Machpud', email: 'saharqweqiwe@gmail.com', phone: '0545459542', desc: utilService.makeLorem(5)},
-    {_id:utilService.makeId(), firstName:'reut', lastName:'edry', email: 'reut@gmail.com', phone: '0540304303', desc: utilService.makeLorem(5)},   
-    {_id:utilService.makeId(), firstName:'asd', lastName:'qwe', email: 'qwe@gmail.com', phone: '0545459545', desc: utilService.makeLorem(5)}
+    { _id: utilService.makeId(), firstName: 'Sahar', lastName: 'Machpud', email: 'saharqweqiwe@gmail.com', phone: '0545459542', desc: utilService.makeLorem(5) },
+    { _id: utilService.makeId(), firstName: 'reut', lastName: 'edry', email: 'reut@gmail.com', phone: '0540304303', desc: utilService.makeLorem(5) },
+    { _id: utilService.makeId(), firstName: 'asd', lastName: 'qwe', email: 'qwe@gmail.com', phone: '0545459545', desc: utilService.makeLorem(5) }
 ]
 
 
-function query(filterBy={}) {
+function query(filterBy = {}) {
     let contactToShow = utilService.loadFromStorage(STORAGE_KEY)
-    if(!contactToShow || !contactToShow.length) utilService.saveToStorage(STORAGE_KEY, contacts)
+    if (!contactToShow || !contactToShow.length) utilService.saveToStorage(STORAGE_KEY, contacts)
     // if (filterBy.txt) {
     //     const regExp = new RegExp(filterBy.txt, 'i')
     //     todosToShow = todosToShow.filter(todo => regExp.test(todo.txt))
@@ -43,8 +42,8 @@ function query(filterBy={}) {
     return Promise.resolve(contactToShow)
 }
 
-function getDefaultFilter(){
-    return {txt: '',sortBy:''}
+function getDefaultFilter() {
+    return { txt: '', sortBy: '' }
 }
 
 function getById(contactId) {
@@ -56,6 +55,7 @@ function remove(contactId) {
 }
 
 function save(contact) {
+    console.log('contact:', contact)
     if (contact._id) {
         return storageService.put(STORAGE_KEY, contact)
     } else {
@@ -63,8 +63,8 @@ function save(contact) {
     }
 }
 
-function getEmptyContact(firstName, lastName, email, phone) {
-    return { 
+function getEmptyContact(firstName = 'Yossi', lastName ='EWIJRW', email = 'werwrwe@gmail.com', phone) {
+    return {
         desc: utilService.makeLorem(5),
         firstName,
         lastName,

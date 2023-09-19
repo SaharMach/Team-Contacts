@@ -1,0 +1,44 @@
+.home {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #e8f8f5;
+    padding: 50px 0;
+    transition: all 0.3s ease;
+  }
+  
+.home-title {
+    color: #2E7D32;
+  
+     
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  } 
+  
+  .intro-text {
+    color: #333;
+    font-size: 1.1rem;
+    text-align: center;
+    max-width: 500px;
+    margin: 20px 0;
+    line-height: 1.5;
+  }
+  
+  img {
+    max-width: 100%;
+    height: 400px;
+    margin: 25px 0;
+    border-radius: 8px;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  .home:hover h1 {
+    transform: scale(1.05);
+    color: #046b53; 
+  }
+  
+  .home:hover img {
+    transform: scale(1.02);
+  }
+  

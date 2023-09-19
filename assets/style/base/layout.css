@@ -1,0 +1,11 @@
+.main-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 1000px;
+}
+
+.main-area-container{
+    display: flex;
+    justify-content: center;
+}
